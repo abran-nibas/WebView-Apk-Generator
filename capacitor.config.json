@@ -4,6 +4,7 @@
   "webDir": "www",
   "server": {
     "url": "https://google.com",
-    "cleartext": true
+    "cleartext": true,
+    "allowNavigation": ["*"]
   }
 }
