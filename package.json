@@ -1,0 +1,27 @@
+{
+  "name": "webview-apk-generator",
+  "version": "1.0.0",
+  "description": "A lightweight WebView wrapper built with Capacitor to transform any web application into a functional Android/iOS APK/IPA.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kansalanmol-js/WebView-Apk-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kansalanmol-js/WebView-Apk-Generator/issues"
+  },
+  "homepage": "https://github.com/kansalanmol-js/WebView-Apk-Generator#readme",
+  "dependencies": {
+    "@capacitor/android": "^8.3.0",
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^7.6.1",
+    "@capacitor/core": "^8.3.0"
+  }
+}

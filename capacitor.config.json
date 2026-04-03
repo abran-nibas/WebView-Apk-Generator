@@ -1,0 +1,9 @@
+{
+  "appId": "com.example.webviewapp",
+  "appName": "WebViewApp",
+  "webDir": "www",
+  "server": {
+    "url": "https://google.com",
+    "cleartext": true
+  }
+}
