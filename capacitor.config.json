@@ -1,9 +1,9 @@
 {
-  "appId": "com.example.webviewapp",
-  "appName": "WebViewApp",
+  "appId": "app.lovable.activityai",
+  "appName": "Activity Tracker",
   "webDir": "www",
   "server": {
-    "url": "https://google.com",
+    "url": "https://activityai.lovable.app/",
     "cleartext": true,
     "allowNavigation": ["*"]
   }
