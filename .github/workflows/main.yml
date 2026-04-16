@@ -1,7 +1,7 @@
 name: Build Android APK
 
 on:
-  workflow_dispatch: # This creates the "Run workflow" button for you!
+  workflow_dispatch: 
 
 jobs:
   build:
@@ -17,14 +17,19 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    # Tell it to look inside the android folder to make it executable
     - name: Make Gradle executable
-      run: chmod +x gradlew
+      run: chmod +x android/gradlew
 
+    # Tell it to go inside the android folder before building
     - name: Build the APK
-      run: ./gradlew assembleDebug
+      run: |
+        cd android
+        ./gradlew assembleDebug
 
+    # Tell it where to find the finished app inside the android folder
     - name: Upload the APK so you can download it
       uses: actions/upload-artifact@v4
       with:
         name: Activity-AI-Android-App
-        path: app/build/outputs/apk/debug/*.apk
+        path: android/app/build/outputs/apk/debug/*.apk
