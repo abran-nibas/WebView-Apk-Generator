@@ -11,23 +11,21 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v4
 
-    # NEW: Tell the robot to use Node.js
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
 
+    # FIXED: Upgraded Java version from 17 to 21 to match your template
     - name: Set up Java
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
 
-    # NEW: Download the required "glue" files
     - name: Install Dependencies
       run: npm install
 
-    # NEW: Sync your website URL into the Android code
     - name: Sync Capacitor Android
       run: npx cap sync android
 
