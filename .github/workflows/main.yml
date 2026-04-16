@@ -11,23 +11,34 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v4
 
+    # NEW: Tell the robot to use Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
     - name: Set up Java
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
 
-    # Tell it to look inside the android folder to make it executable
+    # NEW: Download the required "glue" files
+    - name: Install Dependencies
+      run: npm install
+
+    # NEW: Sync your website URL into the Android code
+    - name: Sync Capacitor Android
+      run: npx cap sync android
+
     - name: Make Gradle executable
       run: chmod +x android/gradlew
 
-    # Tell it to go inside the android folder before building
     - name: Build the APK
       run: |
         cd android
         ./gradlew assembleDebug
 
-    # Tell it where to find the finished app inside the android folder
     - name: Upload the APK so you can download it
       uses: actions/upload-artifact@v4
       with:
